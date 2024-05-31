@@ -4,6 +4,7 @@ import Image from "next/image";
 export default function Section1() {
   return (
     <div className="sec1 p-5 flex flex-col ">
+      
       <Image src={"/img/logo.webp"} width={150} className="mb-6" height={100} />
       <h2 className="text-white text-3xl sm:text-4xl lg:text-6xl md:text-4xl leading-snug sm:w-full md:w-3/4 text-center mb-6">
         طراحی سایت ارزان با یونیکد
