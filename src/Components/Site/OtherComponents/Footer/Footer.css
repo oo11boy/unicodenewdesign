@@ -1,0 +1,29 @@
+footer{
+    width: 100%;
+    background-color: #2e2e34;
+    margin-top: 5%;
+    padding: 20px 0;
+}
+.sec1footer{
+width: 90%;
+margin: auto;
+display: flex;
+align-items: center;
+padding: 2% 0;
+border-bottom: 1px solid rgba(255, 255, 255, 0.433);
+color: white;
+justify-content: space-between;
+}
+.sec1footer > div{
+display: flex;
+align-items: center;
+
+justify-content: flex-start;
+}
+
+.sec1footer span{
+    font-size: 40px;
+    color: orange;
+    margin-left: 20px;
+
+}

@@ -3,7 +3,7 @@ import './Section3.css'
 export default function Section3() {
   return (
     <div className="Section3">
-      <h2>دلایل انتخاب ما برای سفارش طراحی سایت</h2>
+      <h2 className='text-center'>دلایل انتخاب ما برای سفارش طراحی سایت</h2>
       <div className="contentSection3">
         <div>
         <span class="icon-trophy"></span>

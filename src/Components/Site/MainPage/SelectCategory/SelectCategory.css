@@ -1,14 +1,5 @@
-.Section3 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-   
-    padding: 5% 0;
-  }
-  
 
-  .Section3{
+.SelectCategory{
     background: -moz-linear-gradient(45deg, #02e1ba 0%, #26c9f2 29%, #d911f2 66%, #ffa079 100%);
     background: -webkit-linear-gradient(45deg, #02e1ba 0%,#26c9f2 29%,#d911f2 66%,#ffa079 100%);
     background: linear-gradient(45deg, #02e1ba 0%,#26c9f2 29%,#d911f2 66%,#ffa079 100%);
@@ -17,10 +8,9 @@
 	-moz-animation: Gradient 15s ease infinite;
 	animation: Gradient 15s ease infinite;
     height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+ 
     width: 100%;
+padding: 8% 5%;
     overflow: hidden;
     position: relative; 
 }
@@ -30,8 +20,8 @@
 
 
 
-.Section3::before, 
-.Section3::after {
+.SelectCategory::before, 
+.SelectCategory::after {
 	content: "";
 	width: 70vmax;
 	height: 70vmax;
@@ -46,7 +36,7 @@
 	pointer-events: none; 
 }
 	
-.Section3::after {
+.SelectCategory::after {
     width: 70vmin;
     height: 70vmin;
     left: auto;
@@ -121,84 +111,3 @@
 	.st13{opacity:0.2;}
 	.st14{clip-path:url(#SVGID_16_);}
 	.st15{opacity:0.3;fill:#FFFFFF;enable-background:new    ;}
-
-  .Section3 h2 {
-    color: rgb(255, 255, 255);
-    margin: 0 0 2% 0;
-    
-    font-size:25px;
-  }
-  
-  .contentSection3 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    margin: auto;
-    flex-wrap: wrap;
-  }
-  .contentSection3 h2{
-      color: black!important;
-      
-   font-size:18px;
-  }
-  .contentSection3 div {
-    width: 30%;
-   background-color: orange;
-  
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    
-    margin-bottom: 10px;
-  }
-  .contentSection3 div  span{
-      margin-left: 10px;
-      font-size: 30px;
-  }
-  
-
-  @media only screen and (max-width: 1280px) {
-  
-
-    .contentSection3 h2{
-        color: black!important;
-        
-     font-size:14px;
-    }
-    .contentSection3 div {
-      width: 48%;
-     background-color: orange;
-    
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      
-      margin-bottom: 10px;
-    }
-
-  }
-
-
-  @media only screen and (max-width: 660px) {
-    .contentSection3{
-      flex-direction: column;
-    }
-    .contentSection3 h2{
-      color: black!important;
-      
-   font-size:14px;
-  }
-  .contentSection3 div {
-    width: 100%;
-   background-color: orange;
-  
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    
-    margin-bottom: 10px;
-  }
-
-
-  }

@@ -12,9 +12,9 @@
   text-align: center;
   padding: 2% 0 2% 0;
   border-radius: 15px;
-  width: 35%;
+
   margin: auto;
-  font-size: 30px;
+
   border: 1px solid #0e20c6;
 
   display: inline-block;
@@ -84,4 +84,65 @@
   border-radius: 10px;
   height: unset !important;
   font-size: 20px;
+}
+
+
+
+@media only screen and (max-width: 1280px) {
+  
+
+  .roadmapdesign {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+  
+    margin: 2% auto;
+    flex-wrap: wrap;
+  }
+
+  .roadmapdesign > div {
+    width: 48%;
+    text-align: center;
+    height: 310px;
+  
+    padding: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px 5px;
+    background-color: #2e2e34;
+    border: 2px solid orange;
+  }
+  
+
+}
+
+
+
+@media only screen and (max-width: 660px) {
+
+  .roadmapdesign {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+  flex-direction: column;
+    margin: 2% auto;
+    flex-wrap: wrap;
+  }
+
+  .roadmapdesign > div {
+    width: 100%;
+    text-align: center;
+    height: 300px;
+  
+    padding: 30px;
+
+    flex-direction: column;
+ 
+  }
+  
 }

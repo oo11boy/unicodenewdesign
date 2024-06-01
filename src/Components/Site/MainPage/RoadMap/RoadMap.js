@@ -6,7 +6,7 @@ import './RoadMap.css'
 export default function RoadMap() {
   return (
     <div className="stepsdesign">
-        <h2>مراحل سفارش طراحی و خرید سایت</h2>
+        <h2 className="text-lg sm:text-2xl sm:w-[50%] w-[90%]">مراحل سفارش طراحی و خرید سایت</h2>
     <div className="roadmapdesign">
        
       <div>
@@ -52,7 +52,7 @@ export default function RoadMap() {
         <h3>واریز هزینه طراحی سایت</h3>
         <p>
           پس از ثبت قرارداد و تایید طرح مورد نظر مبلغ را واریز مینمایید همچنین
-          امکان پرداخت بصورت قسطی نیز وجود دارد.
+          امکان پرداخت بصورت چند مرحله ای نیز وجود دارد.
         </p>
         <p className="numroadmap">4</p>
       </div>
