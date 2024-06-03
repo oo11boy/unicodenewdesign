@@ -1,58 +1,58 @@
 import React from 'react'
 import './Section3.css'
-export default function Section3() {
+export default function Section3({bg}) {
   return (
-    <div className="Section3">
+    <div className={`Section3 ${bg}`}>
       <h2 className='text-center'>دلایل انتخاب ما برای سفارش طراحی سایت</h2>
       <div className="contentSection3">
         <div>
         <span class="icon-trophy"></span>
-          <h2>بیش از 5 سال سابقه</h2>
+          <h3>بیش از 8 سال سابقه</h3>
         </div>
         <div>
         <span class="icon-info"></span>
-          <h2>مشاوره رایگان و تخصصی</h2>
+          <h3>مشاوره رایگان و تخصصی</h3>
         </div>
         <div>
         <span class="icon-embed2"></span>
-          <h2>طراحی سایت ارزان</h2>
+          <h3>طراحی سایت ارزان</h3>
         </div>
         <div>
         <span class="icon-rocket"></span>
 
-          <h2>طراحی سایت با سرعت بارگذاری عالی</h2>
+          <h3>طراحی سایت با سرعت بارگذاری عالی</h3>
         </div>
         <div>
         <span class="icon-stats-dots"></span>
-          <h2>طراحی سایت با سئو مناسب</h2>
+          <h3>طراحی سایت با سئو مناسب</h3>
         </div>
         <div>
         <span class="icon-mobile"></span>
-          <h2>طراحی سایت کاملا ریسپانسیو</h2>
+          <h3>طراحی سایت کاملا ریسپانسیو</h3>
         </div>
         <div>
         <span class="icon-play2"></span>
-          <h2>ویدیو آموزشی نحوه انتشار محتوا</h2>
+          <h3>ویدیو آموزشی نحوه انتشار محتوا</h3>
         </div>
         <div>
         <span class="icon-podcast"></span>
-          <h2>طراحی سایت با امنیت بالا</h2>
+          <h3>طراحی سایت با امنیت بالا</h3>
         </div>
         <div>
         <span class="icon-calendar"></span>
-          <h2>تحویل سریع سایت </h2>
+          <h3>تحویل سریع سایت </h3>
         </div>
         <div>
         <span class="icon-paint-format"></span>
-          <h2>کیفیت مناسب طراحی سایت </h2>
+          <h3>کیفیت مناسب طراحی سایت </h3>
         </div>
         <div>
         <span class="icon-lifebuoy"></span>
-          <h2>امکان پرداخت اقساطی</h2>
+          <h3>امکان پرداخت اقساطی</h3>
         </div>
         <div>
         <span class="icon-phone"></span>
-          <h2>پشتیبانی رایگان </h2>
+          <h3>پشتیبانی رایگان </h3>
         </div>
       </div>
     </div>

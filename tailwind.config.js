@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-import flowbite from "flowbite/plugin";
+import autoprefixer from "autoprefixer";
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/flowbite-react/lib/**/*.js"
 
   ],
   theme: {
@@ -18,6 +18,6 @@ module.exports = {
     },
   },
   plugins: [
-   flowbite,
+   autoprefixer
 ]
 };

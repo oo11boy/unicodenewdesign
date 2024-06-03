@@ -1,26 +1,27 @@
+import Link from 'next/link'
 import React from 'react'
 
-export default function Price() {
+export default function PriceMainPage() {
   return (
 <div class="pt-5 bg-gray-900" id="pricing">
   <div class="mx-auto pb-20 mt-4 max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-4xl text-center">
       <h3 class="text-base font-semibold leading-7 text-indigo-400">قیمت گذاری</h3>
-      <h2 class="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">تعرفه سفارش طراحی سایت</h2>
+      <h3 class="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">تعرفه سفارش طراحی سایت</h3>
     </div>
     <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-300">پلن مورد نظر را انتخاب نمایید.</p>
     <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
       
-      <div class="ring-1 ring-white/10 rounded-3xl p-8 xl:p-10">
+      <div class="ring-1 ring-white/50 rounded-3xl p-8 xl:p-10">
         <div class="flex items-center justify-between gap-x-4">
           <h2 id="product1" class="text-lg font-semibold leading-8 text-white">طراحی سایت اقتصادی</h2>
         </div>
         <p class="mt-4 text-sm leading-6 text-gray-300">مناسب سایت های شخصی و رزومه ای و کوچک</p>
         <p class="mt-6 flex items-baseline gap-x-1">
-          <span class="text-4xl font-bold tracking-tight text-white">شروع از 3 میلیون تومان</span><span class="text-sm font-semibold leading-6 text-gray-300"></span>
+          <span class="text-4xl font-bold tracking-tight text-white">شروع از 2 میلیون تومان</span><span class="text-sm font-semibold leading-6 text-gray-300"></span>
         </p>
-        <a href="/order" aria-describedby="product1"
-          class="bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">اطلاعات بیشتر</a>
+        <Link href="../goodprice_design" aria-describedby="product1"
+          class="bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">اطلاعات بیشتر</Link>
         <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10">
           <li class="flex gap-x-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
               aria-hidden="true" class="h-6 w-5 flex-none text-white">
@@ -60,8 +61,8 @@ export default function Price() {
         <p class="mt-6 flex items-baseline gap-x-1">
           <span class="text-4xl font-bold tracking-tight text-white">شروع از 6 میلیون تومان</span><span class="text-sm font-semibold leading-6 text-gray-300"></span>
         </p>
-        <a href="/order" aria-describedby="product2"
-          class="bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-indigo-500 mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">اطلاعات بیشتر</a>
+        <Link href="../store_design" aria-describedby="product2"
+          class="bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-indigo-500 mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">اطلاعات بیشتر</Link>
         <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10">
           <li class="flex gap-x-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
               aria-hidden="true" class="h-6 w-5 flex-none text-white">
@@ -98,16 +99,16 @@ export default function Price() {
       </div>
 
       
-      <div class="ring-1 ring-white/10 rounded-3xl p-8 xl:p-10">
+      <div class="ring-1 ring-white/50 rounded-3xl p-8 xl:p-10">
         <div class="flex items-center justify-between gap-x-4">
           <h2 id="product3" class="text-lg font-semibold leading-8 text-white">طراحی سایت شرکتی</h2>
         </div>
         <p class="mt-4 text-sm leading-6 text-gray-300"> مناسب برای انواع شرکت های مختلف </p>
         <p class="mt-6 flex items-baseline gap-x-1">
-          <span class="text-4xl font-bold tracking-tight text-white">شروع از 6 میلیون تومان</span><span class="text-sm font-semibold leading-6 text-gray-300"></span>
+          <span class="text-4xl font-bold tracking-tight text-white">شروع از 4 میلیون تومان</span><span class="text-sm font-semibold leading-6 text-gray-300"></span>
         </p>
-        <a href="/order" aria-describedby="product3"
-          class="bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">اطلاعات بیشتر</a>
+        <Link href="../company_design" aria-describedby="product3"
+          class="bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">اطلاعات بیشتر</Link>
         <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10">
           <li class="flex gap-x-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
               aria-hidden="true" class="h-6 w-5 flex-none text-white">

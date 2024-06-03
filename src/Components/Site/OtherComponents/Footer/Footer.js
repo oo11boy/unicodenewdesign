@@ -7,7 +7,7 @@ export default function  Footer() {
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col sm:flex-row items-center justify-between pb-14 border-b border-gray-500 gap-8">
         <a href="#" class="">
-          <Image src={"/img/logo.webp"} width={100} height={100} alt="سفارش طراحی سایت ارزان" />
+          <Image src={"/img/logo.webp"} width={100} height={100} alt="سفارش طراحی سایت ارزان"    title="طراحی سایت ارزان" />
         </a>
         <div class="flex items-center gap-4">
           <a href="javascript:;"

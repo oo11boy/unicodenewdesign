@@ -19,7 +19,6 @@
 
 
 
-
 .sec1::before, 
 .sec1::after {
 	content: "";
@@ -111,3 +110,16 @@
 	.st13{opacity:0.2;}
 	.st14{clip-path:url(#SVGID_16_);}
 	.st15{opacity:0.3;fill:#FFFFFF;enable-background:new    ;}
+
+	.storebg{
+		background: linear-gradient(to right, rgb(236, 0, 140), rgb(252, 103, 103));
+	}
+	
+	
+	.companybg{
+		background: linear-gradient(to right, rgb(0, 70, 127), rgb(165, 204, 130));
+	}
+	.goodpricebg{
+		background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+	}
+	

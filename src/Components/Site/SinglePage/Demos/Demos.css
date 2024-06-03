@@ -1,0 +1,107 @@
+.itemdemo{
+    width: 23%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 6px 30px 0px rgba(7, 97, 125, .12);
+    border: 1px solid rgba(0, 0, 0, 0.444);
+    background-position: top;
+    position: relative;
+    background-size: cover;
+    margin: 2.5% 0;
+}
+.demos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+   
+ width: 90%;
+ margin: auto;
+}
+
+
+
+.secdemo{
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 6px 30px 0px rgba(7, 97, 125, .12);
+    margin: 5% 0;
+  
+    width: 100%;
+text-align: center;
+}
+
+.secdemo h2{
+    text-align: center;
+    width: 100%;
+    
+    padding: 20px;
+    font-size: clamp(1rem, 0.5694rem + 2.7778vw, 1.8rem);
+}
+
+
+.seedesign a{
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 15px;
+    
+}
+
+
+.seedesign {
+
+ 
+
+    position: absolute;
+ 
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);  /* رنگ و شفافیت پس‌زمینه */
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    
+    height: 100%;
+    display: none;  /* مخفی کردن در حالت عادی */
+}
+
+.itemdemo:hover .seedesign {
+    display: flex;  /* نمایش دادن هنگام هاور */
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+
+.namedemo{
+    position: absolute;
+  width: 80%;
+right: 10%;
+  text-align: center;
+  bottom: 10px;
+  padding: 5px;
+  color: white;
+  border: 3px solid rgba(255, 166, 0, 0.348);
+  border-radius: 15px;
+  background-color: rgb(62, 175, 14);
+}
+
+
+@media only screen and (max-width: 600px) {
+    .itemdemo{
+        width: 49%;
+        height: 150px;
+      font-size: 14px;
+    }
+    .demos{
+   
+     width: 98%;
+   
+    }
+    .namedemo{
+    
+      width: 100%;
+    right: 0%;
+    
+    }
+}
