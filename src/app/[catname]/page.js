@@ -17,8 +17,90 @@ import Demos from "@/Components/Site/SinglePage/Demos/Demos";
 import "../icons.css";
 import { company_design, goodprice_design, store_design } from "@/Db";
 import React from "react";
+import { redirect } from "next/navigation";
+
+export async function generateMetadata({ params }) {
+  const { catname } = params;
+
+  return {
+    title:
+      catname == "store_design"
+        ? store_design.metatitle
+        : catname == "company_design"
+        ? company_design.metatitle
+        : catname == "goodprice_design"
+        ? goodprice_design.metatitle
+        : "طراحی سایت ارزان در تهران و ایران | قیمت از 1 میلیون تومان",
+
+    description:
+      catname == "store_design"
+        ? store_design.undertitlesec1
+        : catname == "company_design"
+        ? company_design.undertitlesec1
+        : catname == "goodprice_design"
+        ? goodprice_design.undertitlesec1
+        : "به دنبال طراحی سایت ارزان و با کیفیت مناسب هستید؟ ما می توانیم وب سایت شما را با بهترین قیمت و در کوتاه ترین زمان ممکن طراحی کنیم.",
+
+    keywords:
+      catname == "store_design"
+        ? store_design.keywords
+        : catname == "company_design"
+        ? company_design.keywords
+        : catname == "goodprice_design"
+        ? goodprice_design.keywords
+        : "طراحی سایت ارزان ، خرید سایت ارزان ، طراحی سایت شرکتی ارزان ، طراحی سایت فروشگاهی ارزان ، طراحی سایت شخصی رزومه ای ارزان ، سفارش طراحی سایت ارزان ، خرید سایت فروشگاهی",
+    author: "unicodewebdeisgn",
+    openGraph: {
+      title:
+        catname == "store_design"
+          ? store_design.metatitle
+          : catname == "company_design"
+          ? company_design.metatitle
+          : catname == "goodprice_design"
+          ? goodprice_design.metatitle
+          : "طراحی سایت ارزان در تهران و ایران | قیمت از 1 میلیون تومان",
+
+      description:
+        catname == "store_design"
+          ? store_design.undertitlesec1
+          : catname == "company_design"
+          ? company_design.undertitlesec1
+          : catname == "goodprice_design"
+          ? goodprice_design.undertitlesec1
+          : "به دنبال طراحی سایت ارزان و با کیفیت مناسب هستید؟ ما می توانیم وب سایت شما را با بهترین قیمت و در کوتاه ترین زمان ممکن طراحی کنیم.",
+
+      image: "../img/logo.webp",
+    },
+    twitter: {
+      title:
+        catname == "store_design"
+          ? store_design.metatitle
+          : catname == "company_design"
+          ? company_design.metatitle
+          : catname == "goodprice_design"
+          ? goodprice_design.metatitle
+          : "طراحی سایت ارزان در تهران و ایران | قیمت از 1 میلیون تومان",
+
+      description:
+        catname == "store_design"
+          ? store_design.undertitlesec1
+          : catname == "company_design"
+          ? company_design.undertitlesec1
+          : catname == "goodprice_design"
+          ? goodprice_design.undertitlesec1
+          : "به دنبال طراحی سایت ارزان و با کیفیت مناسب هستید؟ ما می توانیم وب سایت شما را با بهترین قیمت و در کوتاه ترین زمان ممکن طراحی کنیم.",
+
+      image: "../img/logo.webp",
+    },
+  };
+}
+
 export default function page({ params }) {
   const { catname } = params;
+  catname !== "store_design" &&
+    catname !== "company_design" &&
+    catname !== "goodprice_design" &&
+    redirect("../");
   return (
     <>
       <Header />
@@ -58,7 +140,7 @@ export default function page({ params }) {
         <Section2
           titleh1={company_design.titleh1}
           undertitleh1={company_design.undertitleh1}
-          img={'companysvg'}
+          img={"companysvg"}
         />
       )}
       {catname === "goodprice_design" && (
@@ -69,9 +151,9 @@ export default function page({ params }) {
         />
       )}
 
-   {catname=="store_design" && <Section3 bg={"storebg"} />}   
-   {catname=="company_design" && <Section3 bg={"companybg"} />}   
-   {catname=="goodprice_design" && <Section3 bg={"goodpricebg"} />}   
+      {catname == "store_design" && <Section3 bg={"storebg"} />}
+      {catname == "company_design" && <Section3 bg={"companybg"} />}
+      {catname == "goodprice_design" && <Section3 bg={"goodpricebg"} />}
       {catname == "store_design" && <StoreTable />}
       {catname == "company_design" && (
         <CompanyTable title={"شرکتی"} price1={4} price2={6} hard={3} />

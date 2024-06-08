@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://unicodewebdesign.com
+
+# Sitemaps
+Sitemap: https://unicodewebdesign.com/sitemap.xml

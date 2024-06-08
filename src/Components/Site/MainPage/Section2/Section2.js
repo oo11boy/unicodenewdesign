@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import './Section2.css'
+
 export default function Section2({titleh1,undertitleh1,img}) {
   return (
     

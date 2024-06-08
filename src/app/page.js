@@ -12,6 +12,7 @@ import Faq from "@/Components/Site/MainPage/Faq/Faq";
 import MoreContent from "@/Components/Site/MainPage/MoreContent/MoreContent";
 import Footer from "@/Components/Site/OtherComponents/Footer/Footer";
 import PriceMainPage from "@/Components/Site/MainPage/Price/PriceMainPage";
+import Posts from "@/Components/Site/MainPage/Posts/Posts";
 export default function page() {
   return (
     <div>
@@ -25,6 +26,7 @@ export default function page() {
         <SelectCategory />
         <Comments />
        <Faq/>
+   
        <MoreContent>
    <>
         <h2 className='text-center  font-semibold text-xl mb-10'>
@@ -196,6 +198,7 @@ export default function page() {
 <p className='text-justify'>ایمیل: unicodewebdeisgn@gmail.com</p>
    </>
 </MoreContent>
+<Posts/>
        <Footer/>
       </main>
     </div>
