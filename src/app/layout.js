@@ -1,3 +1,4 @@
+import { BlogSchema } from "./Blog/[namepost]/page";
 import "./globals.css";
 import localFont from '@next/font/local'
 const vazir = localFont({
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
     <html lang="fa" dir="rtl">
       <head>
         <link rel="stylesheet" href="../Styles.css" />
+     
       </head>
       <body className={vazir.className}>{children}</body>
     </html>

@@ -1,23 +1,25 @@
 import React, { useRef, useState } from "react";
-import JoditEditor from "jodit-pro-react";
+
 import "./AddPostForm.css";
 import { API_URL } from "../../../../ApiUrl";
 
+import Editorme from "./Editor";
+
 export default function AddPostForm() {
   const editor = useRef(null);
-  const [content, setContent] = useState("");
+
 
   const [formData, setFormData] = useState({
     metatitle: "",
     metadescription: "",
     h1title: "",
     mainimg: "",
-    text: content,
+    text: "",
     keyword: "",
     link: "",
     shorttext:""
   });
-
+console.log(formData.text)
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -25,7 +27,7 @@ export default function AddPostForm() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmitPost = async (e) => {
     e.preventDefault();
     try {
       const response = await fetch(`${API_URL}/addPost`, {
@@ -69,7 +71,7 @@ export default function AddPostForm() {
 console.log(formData)
   return (
     <div>
-      <form onSubmit={handleSubmit} className="flex flex-col w-full gap-5">
+      <form onSubmit={handleSubmitPost} className="flex flex-col w-full gap-5">
         <input
           className="border border-black p-5 rounded-xl"
           type="text"
@@ -122,19 +124,7 @@ console.log(formData)
         <label style={{ marginBottom: 20 }} htmlFor="">
           توضیحات
         </label>
-        <JoditEditor
-          ref={editor}
-          value={content}
-          tabIndex={1}
-          onBlur={(newContent) =>  setFormData({
-            ...formData,
-            text: newContent,
-          })
-        } 
-          onChange={(newContent) => {}}
-          className="editor"
-          name="text"
-        />
+  <Editorme formData={formData} setFormData={setFormData}/>
         <input
           className="bg-purple-700 p-4 mt-10 rounded-lg text-white"
           type="submit"

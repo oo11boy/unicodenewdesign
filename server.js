@@ -104,6 +104,21 @@ app.get('/getPosts', (req, res) => {
     }
   });
 });
+
+
+app.get('/getadmin', (req, res) => {
+  const getPostsQuery = 'SELECT * FROM admin'; // You can modify this to filter or sort posts
+
+  connection.query(getPostsQuery, (error, results) => {
+    if (error) {
+      console.error('Error fetching posts:', error);
+      res.status(500).send('Error fetching posts');
+    } else {
+      res.json(results); // Send the retrieved posts data
+    }
+  });
+});
+
 app.post('/addPost', (req, res) => {
   const {metatitle,metadescription,h1title,mainimg,text,keyword,link,shorttext} = req.body;
   const addPlansQuery = 'INSERT INTO posts (metatitle,metadescription,h1title,mainimg,text,keyword,link,shorttext) VALUES (?, ?, ?, ?, ?,?,?,?)';

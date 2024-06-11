@@ -9,7 +9,7 @@ const Upload = () => {
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const [allFiles, setAllFiles] = useState([]);
   const [buckets, setBuckets] = useState([]);
-
+console.log(uploadedFiles)
   const ACCESSKEY = "dm5bekgv5u89h3lo"; // or process.env.LIARA_ACCESS_KEY;
   const SECRETKEY = "5fbb0390-da2d-439b-a8c0-2ba629b3203d"; //  or process.env.LIARA_SECRET_KEY;
   const ENDPOINT = "https://storage.iran.liara.space"; //   or process.env.LIARA_ENDPOINT;
@@ -164,17 +164,7 @@ const Upload = () => {
       >
         Show Uploaded Files
       </button>
-      {file && (
-        <div className="mt-4">
-          <h2 className="text-xl font-bold">Selected File Preview:</h2>
-          <img
-            src={URL.createObjectURL(file)}
-            alt="Preview"
-            className="mt-2 border border-gray-300"
-            style={{ maxWidth: "200px", maxHeight: "200px" }}
-          />
-        </div>
-      )}
+  
       {uploadedFiles.length > 0 && (
         <div className="mt-4">
           <h2 className="text-xl font-bold">Uploaded Files:</h2>
@@ -219,7 +209,7 @@ const Upload = () => {
               });
 
               return (
-                <li key={file.Key} className="mt-2">
+                <li key={file.Key} className="mt-2 w-[20%] rounded-lg  border-black border m-1 p-2">
                   {isImage(file.Key) && (
                     <img
                       src={fileLink}

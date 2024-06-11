@@ -1,7 +1,10 @@
 # *
 User-agent: *
-Allow: /
 
+Disallow: 
+Disallow: /Dsh
+Disallow: /Dsh/Dashboard
+Disallow: /dsh/dashboard
 # Host
 Host: https://unicodewebdesign.com
 

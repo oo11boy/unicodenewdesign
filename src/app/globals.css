@@ -1,3 +1,79 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.mainarticle h1,
+.mainarticle div h1 {
+  font-size: 25px;
+  margin: 5px 0;
+  font-weight: 700;
+}
+.mainarticle h2,
+.mainarticle div h2 {
+  font-size: 20px;
+  margin: 5px 0;
+  font-weight: 600;
+}
+.mainarticle h3,
+.mainarticle div h3 {
+  font-size: 18px;
+  margin: 5px 0;
+  font-weight: 800;
+}
+.mainarticle h4,
+.mainarticle div h4 {
+  font-size: 14px;
+  margin: 5px 0;
+}
+.mainarticle p,
+.mainarticle div p {
+  margin: 5px 0;
+}
+
+.mainarticle a,
+.mainarticle div a {
+  color: blue;
+  font-weight: 800;
+}
+.mainarticle ul li {
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.mainarticle ul {
+  list-style-type: circle;
+  margin: 2% 5%;
+}
+@media only screen and (max-width: 600px) {
+  .mainarticle h1,
+  .mainarticle div h1 {
+    font-size: 25px;
+    margin: 5px 0;
+    font-weight: 700;
+  }
+  .mainarticle h2,
+  .mainarticle div h2 {
+    font-size: 20px;
+    margin: 5px 0;
+    font-weight: 600;
+  }
+  .mainarticle h3,
+  .mainarticle div h3 {
+    font-size: 16px;
+    margin: 5px 0;
+    font-weight: 400;
+  }
+  .mainarticle h4,
+  .mainarticle div h4 {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+}
+
+.mainarticle img {
+  width: 95%;
+  border-radius: 20px;
+  margin: 20px 0;
+  height: 100%;
+  object-fit: cover;
+}

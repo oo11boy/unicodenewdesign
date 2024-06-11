@@ -6,6 +6,7 @@ import React from 'react'
 import { API_URL } from '../../../../ApiUrl'
 import { redirect } from 'next/navigation'
 import ToHtml from '@/Components/ToHtml'
+import Script from 'next/script'
 
 export async function getdata() {
   // Fetch data from external API
@@ -15,6 +16,7 @@ export async function getdata() {
   // Pass data to the page via props
   return data
 }
+
 export async function generateMetadata({ params }) {
   const { namepost } = params;
   const dataposts = await getdata();
@@ -51,14 +53,45 @@ console.log(namepost)
 !findpost && redirect('../') 
   return (
  <>
+
+ <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://unicodewebdesign.com/Blog/${findpost.link}`
+            },
+            "headline":  `${findpost.metatitle}`,
+            "description": `${findpost.metadescription}`,
+            "image": `${findpost.mainimg}`,  
+            "author": {
+              "@type": "Organization",
+              "name": "unicodewebdesign",
+              "url": "../"
+            },  
+            "publisher": {
+              "@type": "Organization",
+              "name": "unicodewebdesign",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "../logo.webp"
+              }
+            }
+          }),
+        }}
+      ></script>
+
    <Header/>
-    <div class="w-[90%] my-[10%] mx-auto">
+    <div class="w-[90%] my-[30%] md:my-[10%] mx-auto">
 
         <main class="mt-10">
     
           <div class="mb-4 md:mb-0 w-full mx-auto relative">
             <div class="px-4 lg:px-0">
-              <h1 class="text-4xl font-semibold text-gray-800 leading-tight">
+              <h1 class="mt-16 text-2xl font-semibold text-gray-800 leading-tight">
            
                
     {findpost.h1title}
@@ -71,7 +104,7 @@ console.log(namepost)
               </Link>
             </div>
     
-            <img src={findpost.mainimg} alt={findpost.metatitle} class="w-full object-cover lg:rounded"/>
+            <img src={findpost.mainimg} alt={findpost.metatitle} class="w-full h-[200px] md:h-[500px] object-cover rounded-2xl "/>
           </div>
     
           <div class="flex flex-col lg:flex-row lg:space-x-12">
@@ -84,6 +117,7 @@ console.log(namepost)
               <div class="p-4 border-t border-b md:border md:rounded">
                 <div class="flex py-2">
                   <img src="../img/logo.webp"
+                  alt='طراحی سایت ارزان'
                     class="h-10 w-10 rounded-full ml-2 object-cover" />
                   <div>
                     <p class="font-semibold text-gray-700 text-sm"> طراحی سایت ارزان با یونیکد </p>

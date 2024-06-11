@@ -24,11 +24,11 @@ const [openmenu,setopenmenu]=useState(false)
 
   return (
     <header
-      className={`header fixed top-0 flex justify-between items-center w-full p-5 ${
-        isScrolled ? "blur-header" : ""
+      className={`header fixed  top-0 flex justify-between items-center w-full p-5 ${
+        isScrolled ? "blur-header bg-white" : "bg-[#333]"
       }`}
     >
-      <div className="md:flex hidden">
+      <div className="lg:flex hidden">
         <Image
 
           src={"/img/logo.webp"}
@@ -53,7 +53,7 @@ const [openmenu,setopenmenu]=useState(false)
           <Link href={'../Blog'} title="وبلاگ">وبلاگ</Link>
           </li>
       </ul>
-    {!openmenu ? <svg onClick={()=>setopenmenu(true)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" d-desk-none size-6">
+    {!openmenu ? <svg onClick={()=>setopenmenu(true)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class={`d-desk-none size-6 ${isScrolled ? 'text-black' : 'text-white'} `}>
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 </svg>
 :
@@ -63,8 +63,8 @@ const [openmenu,setopenmenu]=useState(false)
 
 }  
 
-      <div className="flex items-center border rounded-full border-black">
-        <p className="text-black mr-2">09354502369</p>
+      <div className={`flex items-center border rounded-full ${isScrolled ? 'border-black' : 'border-white'}`}>
+        <p className={`${isScrolled ? 'text-black' : 'text-white'} mr-2`}>09354502369</p>
         <button className="bg-black text-white p-1 mr-2 rounded-full">
           ثبت درخواست
         </button>

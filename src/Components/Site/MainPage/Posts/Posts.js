@@ -29,7 +29,7 @@ export default async function Posts() {
         {lastThreePosts.map((item) => (
           <Link key={item.id} className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl p-5" href={`../Blog/${item.link}`}>
             <div className="aspect-w-16 aspect-h-11">
-              <img className="w-full object-cover rounded-xl" src={item.mainimg} alt={item.metatitle} />
+              <img className="w-full object-cover h-[200px] rounded-xl" src={item.mainimg} alt={item.metatitle} />
             </div>
             <div className="my-6">
               <h2 className="text-xl font-semibold text-gray-800">{item.h1title}</h2>
