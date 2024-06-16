@@ -15,9 +15,10 @@ import CompanyTable from "@/Components/Site/OtherComponents/TablePrice/CompanyTa
 import StoreTable from "@/Components/Site/OtherComponents/TablePrice/StoreTable";
 import Demos from "@/Components/Site/SinglePage/Demos/Demos";
 import "../icons.css";
-import { company_design, goodprice_design, store_design } from "@/Db";
+import { company_design, goodprice_design, pez_design, store_design } from "@/Db";
 import React from "react";
 import { redirect } from "next/navigation";
+import Pez_More from "@/Components/Site/MainPage/MoreContent/Pez_More";
 
 export async function generateMetadata({ params }) {
   const { catname } = params;
@@ -29,7 +30,9 @@ export async function generateMetadata({ params }) {
         : catname == "company_design"
         ? company_design.metatitle
         : catname == "goodprice_design"
-        ? goodprice_design.metatitle
+        ? goodprice_design.metatitle 
+        : catname=="pez_design"
+        ? pez_design.metatitle
         : "طراحی سایت ارزان در تهران و ایران | قیمت از 1 میلیون تومان",
 
     description:
@@ -38,7 +41,9 @@ export async function generateMetadata({ params }) {
         : catname == "company_design"
         ? company_design.undertitlesec1
         : catname == "goodprice_design"
-        ? goodprice_design.undertitlesec1
+        ? goodprice_design.undertitlesec1 
+        : catname=="pez_design"
+        ? pez_design.undertitleh1
         : "به دنبال طراحی سایت ارزان و با کیفیت مناسب هستید؟ ما می توانیم وب سایت شما را با بهترین قیمت و در کوتاه ترین زمان ممکن طراحی کنیم.",
 
     keywords:
@@ -48,6 +53,8 @@ export async function generateMetadata({ params }) {
         ? company_design.keywords
         : catname == "goodprice_design"
         ? goodprice_design.keywords
+        : catname=="pez_design"
+        ? pez_design.keywords
         : "طراحی سایت ارزان ، خرید سایت ارزان ، طراحی سایت شرکتی ارزان ، طراحی سایت فروشگاهی ارزان ، طراحی سایت شخصی رزومه ای ارزان ، سفارش طراحی سایت ارزان ، خرید سایت فروشگاهی",
     author: "unicodewebdeisgn",
     openGraph: {
@@ -58,6 +65,8 @@ export async function generateMetadata({ params }) {
           ? company_design.metatitle
           : catname == "goodprice_design"
           ? goodprice_design.metatitle
+          : catname=="pez_design"
+          ? pez_design.metatitle
           : "طراحی سایت ارزان در تهران و ایران | قیمت از 1 میلیون تومان",
 
       description:
@@ -67,6 +76,9 @@ export async function generateMetadata({ params }) {
           ? company_design.undertitlesec1
           : catname == "goodprice_design"
           ? goodprice_design.undertitlesec1
+          : catname=="pez_design"
+          ? pez_design.undertitlesec1
+          
           : "به دنبال طراحی سایت ارزان و با کیفیت مناسب هستید؟ ما می توانیم وب سایت شما را با بهترین قیمت و در کوتاه ترین زمان ممکن طراحی کنیم.",
 
       image: "../img/logo.webp",
@@ -79,6 +91,8 @@ export async function generateMetadata({ params }) {
           ? company_design.metatitle
           : catname == "goodprice_design"
           ? goodprice_design.metatitle
+          : catname=="pez_design"
+          ? pez_design.metatitle
           : "طراحی سایت ارزان در تهران و ایران | قیمت از 1 میلیون تومان",
 
       description:
@@ -88,6 +102,8 @@ export async function generateMetadata({ params }) {
           ? company_design.undertitlesec1
           : catname == "goodprice_design"
           ? goodprice_design.undertitlesec1
+          : catname=="pez_design"
+          ? pez_design.undertitlesec1
           : "به دنبال طراحی سایت ارزان و با کیفیت مناسب هستید؟ ما می توانیم وب سایت شما را با بهترین قیمت و در کوتاه ترین زمان ممکن طراحی کنیم.",
 
       image: "../img/logo.webp",
@@ -99,6 +115,7 @@ export default function page({ params }) {
   const { catname } = params;
   catname !== "store_design" &&
     catname !== "company_design" &&
+    catname !== "pez_design" &&
     catname !== "goodprice_design" &&
     redirect("../");
   return (
@@ -119,6 +136,13 @@ export default function page({ params }) {
           bg={"companybg"}
         />
       )}
+        {catname === "pez_design" && (
+        <Section1
+          title={pez_design.titlesec1}
+          undertitle={pez_design.undertitlesec1}
+          bg={"pzbg"}
+        />
+      )}
 
       {catname === "goodprice_design" && (
         <Section1
@@ -135,7 +159,13 @@ export default function page({ params }) {
           img={"storesvg"}
         />
       )}
-
+     {catname === "pez_design" && (
+        <Section2
+          titleh1={pez_design.titleh1}
+          undertitleh1={pez_design.undertitleh1}
+          img={"pezsvg"}
+        />
+      )}
       {catname === "company_design" && (
         <Section2
           titleh1={company_design.titleh1}
@@ -154,9 +184,13 @@ export default function page({ params }) {
       {catname == "store_design" && <Section3 bg={"storebg"} />}
       {catname == "company_design" && <Section3 bg={"companybg"} />}
       {catname == "goodprice_design" && <Section3 bg={"goodpricebg"} />}
+      {catname == "pez_design" && <Section3 bg={"pzbg"} />}
       {catname == "store_design" && <StoreTable />}
       {catname == "company_design" && (
         <CompanyTable title={"شرکتی"} price1={4} price2={6} hard={3} />
+      )}
+         {catname == "pez_design" && (
+        <CompanyTable title={"پزشکی و دندان پزشکی"} price1={4} price2={6} hard={3} />
       )}
       {catname == "goodprice_design" && (
         <CompanyTable title={"شخصی و رزومه"} price1={2} price2={4} hard={1} />
@@ -179,6 +213,13 @@ export default function page({ params }) {
       {catname == "goodprice_design" && (
         <MoreContent>
           <GoodPrice_More />
+        </MoreContent>
+      )}
+
+
+{catname == "pez_design" && (
+        <MoreContent>
+          <Pez_More />
         </MoreContent>
       )}
 

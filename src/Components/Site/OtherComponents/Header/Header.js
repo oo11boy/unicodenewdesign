@@ -29,6 +29,7 @@ const [openmenu,setopenmenu]=useState(false)
       }`}
     >
       <div className="lg:flex hidden">
+        <Link href={'../'} title="طراحی سایت یونیکد">
         <Image
 
           src={"/img/logo.webp"}
@@ -37,6 +38,7 @@ const [openmenu,setopenmenu]=useState(false)
           alt="سفارش طراحی سایت ارزان"
           title="طراحی سایت ارزان"
         />
+        </Link>
       </div>
     <ul className={`${openmenu ? "menuul":"d-mob-none"} ${(openmenu || isScrolled )?"text-black":(!openmenu || isScrolled) ? "text-white" :"text-black"}  flex  gap-10 text-lg  items-center`}>
         <li><Link href={'../'} title="صفحه اصلی خرید سایت ارزان">خانه</Link></li>
@@ -49,6 +51,7 @@ const [openmenu,setopenmenu]=useState(false)
          <li>
 <Link  href={'../goodprice_design'} title="خرید سایت رزومه ای شخصی"> طراحی سایت رزومه ای</Link>
          </li>
+         
         <li>
           <Link href={'../Blog'} title="وبلاگ">وبلاگ</Link>
           </li>

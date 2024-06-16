@@ -27,7 +27,7 @@ export default async function Posts() {
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {lastThreePosts.map((item) => (
-          <Link key={item.id} className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl p-5" href={`../Blog/${item.link}`}>
+          <a title={item.h1title} key={item.id} className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl p-5" href={`../Blog/${item.link}`}>
             <div className="aspect-w-16 aspect-h-11">
               <img className="w-full object-cover h-[200px] rounded-xl" src={item.mainimg} alt={item.metatitle} />
             </div>
@@ -41,7 +41,7 @@ export default async function Posts() {
                 <h5 className="text-sm text-gray-800">یونیکد</h5>
               </div>
             </div>
-          </Link>
+          </a>
         ))}
       </div>
 

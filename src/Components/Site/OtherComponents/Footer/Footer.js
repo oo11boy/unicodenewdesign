@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Footer() {
   return (
-    <footer class="pt-16 pb-7 bg-gray-900">
+    <footer class="pt-16 pb-7 footer bg-gray-900">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col sm:flex-row items-center justify-between pb-14 border-b border-gray-500 gap-8">
           <a href="#" class="">
@@ -148,6 +148,15 @@ export default function Footer() {
                     طراحی سایت رزومه ای شخصی
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="../pez_design"
+                    title="خرید سایت پزشکی و دندان پزشکی"
+                    class="text-base font-normal max-lg:text-center text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-amber-400 focus-within:outline-0 focus-within:text-amber-400"
+                  >
+                    طراحی سایت پزشکی و دندان پزشکی
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -166,9 +175,8 @@ export default function Footer() {
                   referrerpolicy="origin"
                   alt="نماد اعتماد یونیکد"
                   title="نماد اعتماد یونیکد"
-                  src={
-                    "https://trustseal.enamad.ir/logo.aspx?id=467521&Code=8RJb5Bl8uzBsckWVX7RfaZnom53ODxSQ"
-                  }
+                  src="/img/namad.png"
+                  
                   width={150}
                   height={100}
                 />

@@ -41,6 +41,12 @@ export default async function sitemap() {
       priority: 0.9,
     },
     {
+      url: `https://unicodewebdesign.com/pez_design`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `https://unicodewebdesign.com/Blog`,
       lastModified: new Date(),
       changeFrequency: "daily",

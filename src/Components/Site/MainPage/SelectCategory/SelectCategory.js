@@ -19,6 +19,10 @@ export default function SelectCategory() {
         <span class="icon-credit-card my-4 text-3xl"></span>
           <Link href={"../goodprice_design"} title="طراحی سایت اقتصادی و رزومه ای ارزان">طراحی سایت اقتصادی و رزومه ای ارزان</Link>
         </div>
+        <div className="mb-4 w-[100%] md:w-[48%] lg:w-[24%] flex flex-col bg-slate-950 text-white justify-center items-center h-[200px]">
+        <span class="icon-heart-broken my-4 text-3xl"></span>
+          <Link href={"../pez_design"} title="طراحی سایت پزشکی و دندان پزشکی ارزان">طراحی سایت پزشکی و دندان پزشکی</Link>
+        </div>
         {/* <div className="mb-4 w-[100%] md:w-[48%] lg:w-[24%] flex flex-col bg-slate-950 text-white justify-center items-center h-[200px]">
         <span class="icon-paint-format my-4 text-3xl"></span>
         

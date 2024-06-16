@@ -31,9 +31,10 @@ export default async function page() {
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {dataposts.map((item) => {
             return (
-              <Link
+              <a
                 class="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl p-5"
                 href={`../Blog/${item.link}`}
+                title={item.h1title}
               >
                 <div class="aspect-w-16 aspect-h-11">
                   <img
@@ -58,7 +59,7 @@ export default async function page() {
                     <h5 class="text-sm text-gray-800">یونیکد</h5>
                   </div>
                 </div>
-              </Link>
+              </a>
             );
           })}
         </div>

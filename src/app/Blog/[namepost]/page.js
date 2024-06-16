@@ -1,20 +1,20 @@
-import Posts from '@/Components/Site/MainPage/Posts/Posts'
-import Footer from '@/Components/Site/OtherComponents/Footer/Footer'
-import Header from '@/Components/Site/OtherComponents/Header/Header'
-import Link from 'next/link'
-import React from 'react'
-import { API_URL } from '../../../../ApiUrl'
-import { redirect } from 'next/navigation'
-import ToHtml from '@/Components/ToHtml'
-import Script from 'next/script'
+import Posts from "@/Components/Site/MainPage/Posts/Posts";
+import Footer from "@/Components/Site/OtherComponents/Footer/Footer";
+import Header from "@/Components/Site/OtherComponents/Header/Header";
+import Link from "next/link";
+import React from "react";
+import { API_URL } from "../../../../ApiUrl";
+import { redirect } from "next/navigation";
+import ToHtml from "@/Components/ToHtml";
+import SharePost from "@/Components/Site/OtherComponents/SharePost";
 
 export async function getdata() {
   // Fetch data from external API
-  const res = await fetch(`${API_URL}/getposts`,{cache:'no-cache'})
-  const data = await res.json()
+  const res = await fetch(`${API_URL}/getposts`, { cache: "no-cache" });
+  const data = await res.json();
 
   // Pass data to the page via props
-  return data
+  return data;
 }
 
 export async function generateMetadata({ params }) {
@@ -30,71 +30,63 @@ export async function generateMetadata({ params }) {
     author: "unicodewebdeisgn",
     openGraph: {
       title: findpost.h1title || findpost.metatitle,
-      description:  findpost.metadescription,
+      description: findpost.metadescription,
       image: findpost.mainimg,
+      url: `https://unicodewebdesign.com/Blog/${findpost.link}`,
     },
     twitter: {
-    
-      title:  findpost.metatitle,
-      description:findpost.metadescription,
+      title: findpost.metatitle,
+      description: findpost.metadescription,
       image: findpost.mainimg,
     },
   };
 }
 
+export default async function page({ params }) {
+  const { namepost } = params;
+  const dataposts = await getdata();
 
-
-export default async function page({params}) {
-  const {namepost}=params
-  const dataposts=await getdata()
- 
-  const findpost=await dataposts.filter((item)=>item.link==namepost)[0]
-console.log(namepost)
-!findpost && redirect('../') 
+  const findpost = await dataposts.filter((item) => item.link == namepost)[0];
+  !findpost && redirect("../");
   return (
- <>
-
- <script
+    <>
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            "mainEntityOfPage": {
+            mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": `https://unicodewebdesign.com/Blog/${findpost.link}`
+              "@id": `https://unicodewebdesign.com/Blog/${findpost.link}`,
             },
-            "headline":  `${findpost.metatitle}`,
-            "description": `${findpost.metadescription}`,
-            "image": `${findpost.mainimg}`,  
-            "author": {
+            headline: `${findpost.metatitle}`,
+            description: `${findpost.metadescription}`,
+            image: `${findpost.mainimg}`,
+            author: {
               "@type": "Organization",
-              "name": "unicodewebdesign",
-              "url": "../"
-            },  
-            "publisher": {
+              name: "unicodewebdesign",
+              url: "../",
+            },
+            publisher: {
               "@type": "Organization",
-              "name": "unicodewebdesign",
-              "logo": {
+              name: "unicodewebdesign",
+              logo: {
                 "@type": "ImageObject",
-                "url": "../logo.webp"
-              }
-            }
+                url: "../logo.webp",
+              },
+            },
           }),
         }}
       ></script>
 
-   <Header/>
-    <div class="w-[90%] my-[30%] md:my-[10%] mx-auto">
-
+      <Header />
+      <div class="w-[90%] my-[30%] md:my-[10%] mx-auto">
         <main class="mt-10">
-    
           <div class="mb-4 md:mb-0 w-full mx-auto relative">
             <div class="px-4 lg:px-0">
               <h1 class="mt-16 text-2xl font-semibold text-gray-800 leading-tight">
-           
-               
-    {findpost.h1title}
+                {findpost.h1title}
               </h1>
               <Link
                 href="../"
@@ -103,43 +95,66 @@ console.log(namepost)
                 {findpost.keyword}
               </Link>
             </div>
-    
-            <img src={findpost.mainimg} alt={findpost.metatitle} class="w-full h-[200px] md:h-[500px] object-cover rounded-2xl "/>
+
+            <img
+              src={findpost.mainimg}
+              alt={findpost.metatitle}
+              class="w-full h-[200px] md:h-[500px] object-cover rounded-2xl "
+            />
           </div>
-    
+
           <div class="flex flex-col lg:flex-row lg:space-x-12">
-    
-            <div class="px-4 lg:px-0 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
-        <ToHtml html={findpost.text}/> 
+            <div class="px-4 postsingle lg:px-0 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
+              <ToHtml html={findpost.text} />
+
+              <div>
+              <div className="underarticle">
+                
+                <SharePost title={findpost.metatitle} shareUrl={`https://unicodewebdesign.com/Blog/${findpost.link}`}/>
+
+                </div>
+              </div>
             </div>
-    
+
             <div class="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
               <div class="p-4 border-t border-b md:border md:rounded">
                 <div class="flex py-2">
-                  <img src="../img/logo.webp"
-                  alt='طراحی سایت ارزان'
-                    class="h-10 w-10 rounded-full ml-2 object-cover" />
+                  <img
+                    src="../img/logo.webp"
+                    alt="طراحی سایت ارزان"
+                    class="h-10 w-10 rounded-full ml-2 object-cover"
+                  />
                   <div>
-                    <p class="font-semibold text-gray-700 text-sm"> طراحی سایت ارزان با یونیکد </p>
-                    <p class="font-semibold text-gray-600 text-xs"> unicodewebdesign </p>
+                    <p class="font-semibold text-gray-700 text-sm">
+                      {" "}
+                      طراحی سایت ارزان با یونیکد{" "}
+                    </p>
+                    <p class="font-semibold text-gray-600 text-xs">
+                      {" "}
+                      unicodewebdesign{" "}
+                    </p>
                   </div>
                 </div>
                 <p class="text-gray-700 py-3">
-                اگر به دنبال خرید سایت ارزان و با کیفیت بالا برای خودتان ، شرکتتان و یا کسب و کارتان هستید تیم یونیکد با بیش از 8 سال سابقه طراحی سایت میتوانید به شما در ایجاد سایت کمک کند.
-                  </p>
-                <Link href={'../'} title='سفارش طراحی سایت ارزان' class="px-2 py-1 text-gray-100 bg-green-700 flex w-full items-center justify-center rounded">
-                  اطلاعات بیشتر 
-                  <i class='bx bx-user-plus ml-2' ></i>
+                  اگر به دنبال خرید سایت ارزان و با کیفیت بالا برای خودتان ،
+                  شرکتتان و یا کسب و کارتان هستید تیم یونیکد با بیش از 8 سال
+                  سابقه طراحی سایت میتوانید به شما در ایجاد سایت کمک کند.
+                </p>
+                <Link
+                  href={"../"}
+                  title="سفارش طراحی سایت ارزان"
+                  class="px-2 py-1 text-gray-100 bg-green-700 flex w-full items-center justify-center rounded"
+                >
+                  اطلاعات بیشتر
+                  <i class="bx bx-user-plus ml-2"></i>
                 </Link>
               </div>
             </div>
-    
           </div>
         </main>
-   
       </div>
-      <Posts/>
-      <Footer/>
-      </>
-  )
+      <Posts />
+      <Footer />
+    </>
+  );
 }
