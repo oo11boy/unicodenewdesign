@@ -15,7 +15,7 @@ import PriceMainPage from "@/Components/Site/MainPage/Price/PriceMainPage";
 import Posts from "@/Components/Site/MainPage/Posts/Posts";
 export default function page() {
   return (
-    <div>
+    <div className="relative">
       <Header />
       <main>
         <Section1 />

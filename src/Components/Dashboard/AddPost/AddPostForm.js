@@ -10,6 +10,7 @@ export default function AddPostForm() {
 
 
   const [formData, setFormData] = useState({
+    cat:"",
     metatitle: "",
     metadescription: "",
     h1title: "",
@@ -19,7 +20,7 @@ export default function AddPostForm() {
     link: "",
     shorttext:""
   });
-console.log(formData.text)
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -36,6 +37,7 @@ console.log(formData.text)
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          cat:formData.cat,
           metatitle: formData.metatitle,
           metadescription: formData.metadescription,
           h1title: formData.h1title,
@@ -51,6 +53,7 @@ console.log(formData.text)
         alert("با موفقیت اضافه شد");
         // Optionally, you can reset the form or update the UI
         setFormData({
+          cat:"",
             metatitle: "",
             metadescription: "",
             h1title: "",
@@ -68,7 +71,7 @@ console.log(formData.text)
       console.error("Error:", error);
     }
   };
-console.log(formData)
+
   return (
     <div>
       <form onSubmit={handleSubmitPost} className="flex flex-col w-full gap-5">
@@ -91,6 +94,13 @@ console.log(formData)
           type="text"
           placeholder="متن کوتاه زیر پست"
           name="shorttext"
+          onChange={handleChange}
+        />
+           <input
+          className="border border-black p-5 rounded-xl"
+          type="text"
+          placeholder="دسته بندی"
+          name="cat"
           onChange={handleChange}
         />
         <input

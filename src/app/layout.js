@@ -48,6 +48,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="../Styles.css" />
         <meta property="og:site_name" content="طراحی سایت یونیکد" />
     <GoftinoWidget/>
+    
     <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-F5SP8L25T4"
