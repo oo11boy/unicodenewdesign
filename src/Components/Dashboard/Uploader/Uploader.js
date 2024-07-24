@@ -9,7 +9,7 @@ const Upload = () => {
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const [allFiles, setAllFiles] = useState([]);
   const [buckets, setBuckets] = useState([]);
-console.log(uploadedFiles)
+
   const ACCESSKEY = "dm5bekgv5u89h3lo"; // or process.env.LIARA_ACCESS_KEY;
   const SECRETKEY = "5fbb0390-da2d-439b-a8c0-2ba629b3203d"; //  or process.env.LIARA_SECRET_KEY;
   const ENDPOINT = "https://storage.iran.liara.space"; //   or process.env.LIARA_ENDPOINT;

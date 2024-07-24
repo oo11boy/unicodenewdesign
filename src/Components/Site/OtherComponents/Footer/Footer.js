@@ -2,7 +2,21 @@ import React from "react";
 import "./Footer.css";
 import Image from "next/image";
 import Link from "next/link";
-export default function Footer() {
+import { API_URL } from "../../../../../ApiUrl";
+
+export async function getdata() {
+  // Fetch data from external API
+  const res = await fetch(`${API_URL}/getmaincat`, { cache: "no-cache" });
+  const data = await res.json();
+
+  // Pass data to the page via props
+  return data;
+}
+
+
+export default async function Footer() {
+  const datamaincat = await getdata();
+  
   return (
     <footer class="pt-16 pb-7 footer bg-gray-900">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -120,7 +134,7 @@ export default function Footer() {
               <h6 class="text-lg font-medium text-white mb-7 max-lg:text-center">
                 دسته بندی
               </h6>
-              <ul class="flex flex-col gap-6 max-lg:items-center">
+              <ul class="flex flex-col gap-1 max-lg:items-center">
                 <li>
                   <Link
                     href="../store_design"
@@ -159,6 +173,26 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
+            
+           {datamaincat.length>0 && <div class="">
+              <h6 class="text-lg font-medium text-white mb-7 max-lg:text-center">
+              سایر دسته بندی
+              </h6>
+              <ul class="flex flex-col gap-1 max-lg:items-center">
+           {datamaincat.map((item)=>{
+            return   <li>
+            <a
+              href={`../main/${item.link}`}
+              title={item.title}
+              class="text-base font-normal max-lg:text-center text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-amber-400 focus-within:outline-0 focus-within:text-amber-400"
+            >
+             {item.keyword}
+            </a>
+          </li>
+           })}
+
+              </ul>
+            </div> } 
           </div>
           <div class="w-full lg:max-w-md max-lg:mx-auto ">
             <h6 class="text-lg font-medium text-white mb-7">نماد اعتماد</h6>
@@ -197,6 +231,8 @@ export default function Footer() {
           </span>
         </div>
       </div>
+      <script async data-id="101457870" src="//static.getclicky.com/js"></script>
+
     </footer>
   );
 }

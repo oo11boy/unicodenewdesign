@@ -3,10 +3,11 @@ import Footer from "@/Components/Site/OtherComponents/Footer/Footer";
 import Header from "@/Components/Site/OtherComponents/Header/Header";
 import Link from "next/link";
 import React from "react";
-import { API_URL } from "../../../../ApiUrl";
+import { API_URL, Site_URL } from "../../../../ApiUrl";
 import { redirect } from "next/navigation";
 import ToHtml from "@/Components/ToHtml";
 import SharePost from "@/Components/Site/OtherComponents/SharePost";
+import GetCat from "@/Components/Site/OtherComponents/Blog/GetCat";
 
 export async function getdata() {
   // Fetch data from external API
@@ -48,6 +49,7 @@ export default async function page({ params }) {
 
   const findpost = await dataposts.filter((item) => item.link == namepost)[0];
   !findpost && redirect("../");
+  const keywords = findpost.keyword.split(/[,،]/);
   return (
     <>
       <script
@@ -82,18 +84,24 @@ export default async function page({ params }) {
 
       <Header />
       <div class="w-[90%] my-[30%] md:my-[10%] mx-auto">
-        <main class="mt-10">
+        <main class="mt-10 ">
           <div class="mb-4 md:mb-0 w-full mx-auto relative">
-            <div class="px-4 lg:px-0">
+            <div class="px-4  lg:px-0">
               <h1 class="mt-16 text-2xl font-semibold text-gray-800 leading-tight">
                 {findpost.h1title}
               </h1>
-              <Link
-                href="../"
-                class="py-2 text-green-700 inline-flex items-center justify-center mb-2"
-              >
-                {findpost.keyword}
-              </Link>
+              {keywords.map((keyword, index) => (
+                <>
+         <a
+          key={index}
+          title={keyword}
+          href={'../tags/'+keyword}
+          className="py-2 text-green-700 inline-flex items-center justify-center mb-2"
+        >
+          {keyword.trim()}
+        </a> <span className="mx-2">|</span>
+        </>
+      ))}
             </div>
 
             <img
@@ -104,7 +112,7 @@ export default async function page({ params }) {
           </div>
 
           <div class="flex flex-col lg:flex-row lg:space-x-12">
-            <div class="px-4 postsingle lg:px-0 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
+            <div class="px-4 postsingle lg:px-1 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
               <ToHtml html={findpost.text} />
 
               <div>
@@ -115,8 +123,8 @@ export default async function page({ params }) {
                 </div>
               </div>
             </div>
-
-            <div class="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
+<div class="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
+<div class="w-full ">
               <div class="p-4 border-t border-b md:border md:rounded">
                 <div class="flex py-2">
                   <img
@@ -126,8 +134,8 @@ export default async function page({ params }) {
                   />
                   <div>
                     <p class="font-semibold text-gray-700 text-sm">
-                      {" "}
-                      طراحی سایت ارزان با یونیکد{" "}
+                   
+                      طراحی سایت ارزان با یونیکد
                     </p>
                     <p class="font-semibold text-gray-600 text-xs">
                       {" "}
@@ -150,11 +158,16 @@ export default async function page({ params }) {
                 </Link>
               </div>
             </div>
+         <GetCat/>
+</div>
+           
+            
           </div>
         </main>
       </div>
-      <Posts />
+      <Posts findpost={findpost} />
       <Footer />
+     
     </>
   );
 }

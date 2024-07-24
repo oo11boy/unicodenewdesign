@@ -1,6 +1,6 @@
 import Footer from "@/Components/Site/OtherComponents/Footer/Footer";
 import Header from "@/Components/Site/OtherComponents/Header/Header";
-import Link from "next/link";
+
 import React from "react";
 import { API_URL } from "../../../ApiUrl";
 export async function getdata() {

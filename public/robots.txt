@@ -5,6 +5,8 @@ Disallow:
 Disallow: /Dsh
 Disallow: /Dsh/Dashboard
 Disallow: /dsh/dashboard
+Disallow: /callback
+
 # Host
 Host: https://unicodewebdesign.com
 
